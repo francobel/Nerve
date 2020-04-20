@@ -193,10 +193,13 @@ void HttpHandler::post_register(std::string ip)
 
                 //Update peers list with response
                 auto array = json.at(U("addresses")).as_array();
-                for(auto & i : array)
+                if(array.size() != 0)
                 {
-                    if(i.as_string() != getLocalIPAddress() || i.as_string() == "null")
-                        bc.addToPeers(i.as_string());
+                    for(auto & i : array)
+                    {
+                        if(i.as_string() != getLocalIPAddress())
+                            bc.addToPeers(i.as_string());
+                    }
                 }
 
                 bc.initChain(chain);
