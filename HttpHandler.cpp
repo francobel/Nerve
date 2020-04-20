@@ -28,8 +28,7 @@ void HttpHandler::handle_get(const http_request& message)
             bool result = bc.think();
             if(!result)
             {
-                std::cout << "No thoughts" << std::endl;
-                message.reply(status_codes::OK, "No thoughts");
+                message.reply(status_codes::BadRequest, "No thoughts");
             }
             else
             {
@@ -196,7 +195,7 @@ void HttpHandler::post_register(std::string ip)
                 auto array = json.at(U("addresses")).as_array();
                 for(auto & i : array)
                 {
-                    if(i.as_string() != getLocalIPAddress())
+                    if(i.as_string() != getLocalIPAddress() || i.as_string() == "null")
                         bc.addToPeers(i.as_string());
                 }
 
