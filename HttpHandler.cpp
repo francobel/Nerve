@@ -179,6 +179,7 @@ void HttpHandler::post_register(std::string ip)
 {
     auto task = pplx::create_task([=]()
     {
+        bc.addToPeers(ip);
         return http_client(U("http://" + ip + ":8081/BrainChain/Register/")).request(methods::POST);
     })
     .then([=](const http_response& response)
@@ -195,7 +196,8 @@ void HttpHandler::post_register(std::string ip)
                 auto array = json.at(U("addresses")).as_array();
                 for(auto & i : array)
                 {
-                    bc.addToPeers(i.as_string());
+                    if(i.as_string() != getLocalIPAddress())
+                        bc.addToPeers(i.as_string());
                 }
 
                 bc.initChain(chain);
@@ -404,7 +406,7 @@ std::string HttpHandler::getLocalIPAddress()
 
         s=getnameinfo(ifa->ifa_addr, sizeof(struct sockaddr_in), host, NI_MAXHOST, nullptr, 0, NI_NUMERICHOST);
 
-        if((strcmp(ifa->ifa_name, "wlp2s0") == 0) && (ifa->ifa_addr->sa_family == AF_INET))
+        if((strcmp(ifa->ifa_name, "wlp2s0") == 0 || strcmp(ifa->ifa_name, "enp0s3") == 0) && (ifa->ifa_addr->sa_family == AF_INET))
         {
             if(s != 0)
             {
