@@ -179,13 +179,13 @@ void HttpHandler::post_register(std::string ip)
 {
     auto task = pplx::create_task([=]()
     {
-        bc.addToPeers(ip);
         return http_client(U("http://" + ip + ":8081/BrainChain/Register/")).request(methods::POST);
     })
     .then([=](const http_response& response)
     {
         if (response.status_code() == 200)
         {
+            bc.addToPeers(ip);
             web::json::value json = response.extract_json().get();
             try
             {
