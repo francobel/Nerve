@@ -186,24 +186,8 @@ void displayBanner()
     arr[62] = "                                                                                                `....`                                                ";
     arr[63] = "                                                                                                  ``                                                  ";
     arr[64] = "";
-    arr[65] = "             ./syyyys+-.:s      ./oyyyyys+-`   `:+ooooooooo/:.`   -+ooooo/-`/oooooo+:   `/+o+-  .h.       :/ooooooooo+/-.   .:+oooooooooooooo.        ";
-    arr[66] = "           :yNMy:.`.-+hmNd    :hNMh:.`.-oNNdo`  `-MMMMM+::ohMNdo. `oMMMMN.` .+NMMMM+`    .yN/`  yMy       `.NMMMMo::odMMmh: ``-MMMMM/-::/sdMM/        ";
-    arr[67] = "         `sNMMy       `oMd  `yMMMh`      :MMMm:   NMMMM-    oMMMm/ `mMMMM/    oMMMMy     `ms   :MMM-        dMMMM/   `dMMMN/   NMMMM-     `+M/        ";
-    arr[68] = "        `yMMMN`         sd  hMMMM-        hMMMN:  NMMMM-     hMMMM+ :MMMMm`   `NMMMM:    +N`  `mMMMd        dMMMM/    oMMMMd   NMMMM-   /`  y/        ";
-    arr[69] = "        +MMMMh          `+ +MMMMN         oMMMMd  NMMMM-     /MMMMN. hMMMMo    oMMMMd   `N+   oMMMMM+       dMMMM/    sMMMMd   NMMMM-   m`  ``        ";
-    arr[70] = "        NMMMMs             dMMMMm         /MMMMM- NMMMM-     .MMMMMo .NMMMN.  `dNMMMM/  sm`  .NoMMMMN`      dMMMM/   .mMMMN:   NMMMM- .sM`            ";
-    arr[71] = "       -MMMMM+             NMMMMd         :MMMMM/ NMMMM-      MMMMMy  oMMMMy  om/MMMMm`.N/   hh sMMMMs      dMMMMs:/smMNmy-    NMMMMyhmMM`            ";
-    arr[72] = "       -MMMMM+    .--------NMMMMd         /MMMMM/ NMMMM-      MMMMMy  `mMMMM:-N: hMMMMoyh   /N. `NMMMM-     dMMMMssMMMMm.      NMMMM/:+mM`            ";
-    arr[73] = "       `MMMMMo    -:dMMMMM/hMMMMm         +MMMMM. NMMMM-     .MMMMM+   /MMMMdds  .MMMMNM-  `mo   +MMMMh     dMMMM/ yMMMMy`     NMMMM-  .N`            ";
-    arr[74] = "        hMMMMy      +MMMMd :MMMMM`        sMMMMh  NMMMM-     /MMMMm`    hMMMMm`   sMMMMy   sMsooooNMMMM/    dMMMM/  yMMMMy     NMMMM-   y`   `s       ";
-    arr[75] = "        .mMMMN`     +MMMMh  oMMMM/       `mMMMd.  NMMMM-     dMMMN-     -MMMM:    `NMMN.  -N/-----/MMMMm`   dMMMM/  `yMMMMs    NMMMM-       `yh       ";
-    arr[76] = "         .hMMMy`    +MMMMh   /mMMN-     `sMMNy`   NMMMM:   `sMMNy.       sMMs      +MMo  `dh       hMMMMs   dMMMM/   `hMMMMs   MMMMM:     `:dM+       ";
-    arr[77] = "           :yNMdo/:/hMNNh/    `+hNNs/:/odNms-  `-oNMMMMdssymmh+.         `Nm`       mm` -yMs-     -sMMMMNo-/NMMMMh:.  `hMMMMy-oMMMMMdsosshmMMN.       ";
-    arr[78] = "              .:++++/:.          `-/+++/:.     `----------.`              :-        --  -----    `-----------------.   `---------------------.        ";
-    arr[79] = "                                                                                                                                                 ";
-    arr[80] = "";
 
-    for(int i = 0; i <= 80; i++)
+    for(int i = 0; i <= 64; i++)
     {
         std::cout << arr[i] << std::endl;
         std::this_thread::sleep_for(std::chrono::milliseconds(100));
